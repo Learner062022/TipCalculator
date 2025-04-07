@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
+             x:Class="DylanDeSouzaTipCalculator.MainPage"> 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Bill"/>
+                    <Label Text="{Binding BillAmount,  Mode=OneWay}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Tip"/>
+                    <Label Text="{Binding TipAmount,  Mode=OneWay}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Total"/>
+                    <Label Text="{Binding Total, Mode=OneWay}"/>
+                </HorizontalStackLayout>
+                <sf:SfSlider x:Name="tipSlider" Value="{Binding TipPercentage, Mode=TwoWay}"> 
+                    <sf:SfSlider.Tooltip>
+                        <sf:SliderTooltip ShowAlways="False"/> <!--stretch goal would be displaying the decimal as whole number to represent percentage-->
+                    </sf:SfSlider.Tooltip>
+                </sf:SfSlider>
+                <VerticalStackLayout>
+                    <Label Text="Diners"/>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding AmountDiners, Mode=OneWay}"/>
+                        <Stepper Increment="1" Value="{Binding AmountDiners, Mode=TwoWay}"/>
+                    </HorizontalStackLayout>
+                    <Label Text="{Binding SplitAmount, Mode=OneWay}"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </StackLayout>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Text="7" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button Grid.Row="1" Text="4" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button Grid.Row="2" Text="1" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button Grid.Row="3" Text="0" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button Grid.Row="0" Text="8" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button Grid.Row="1" Text="5" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button Grid.Row="2" Text="2" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button Grid.Row="3" Text="." Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button Grid.Row="0" Text="9" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button Grid.Row="1" Text="6" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button Grid.Row="2" Text="3" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button Grid.Row="3" Text="C" Grid.Column="2" Clicked="Button_Clicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
