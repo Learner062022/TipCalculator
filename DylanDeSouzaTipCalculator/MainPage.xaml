@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
-             x:Class="DylanDeSouzaTipCalculator.MainPage"> 
+             x:Class="DylanDeSouzaTipCalculator.MainPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -11,29 +11,29 @@
         <StackLayout Grid.Row="0">
             <VerticalStackLayout>
                 <HorizontalStackLayout>
-                    <Label Text="Bill"/>
-                    <Label Text="{Binding BillAmount,  Mode=OneWay}"/>
+                    <Label Text="Bill: "/>
+                    <Label Text="{Binding BillAmount}"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
-                    <Label Text="Tip"/>
-                    <Label Text="{Binding TipAmount,  Mode=OneWay}"/>
+                    <Label Text="Tip: "/>
+                    <Label Text="{Binding TipAmount}"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
-                    <Label Text="Total"/>
-                    <Label Text="{Binding Total, Mode=OneWay}"/>
+                    <Label Text="Total: "/>
+                    <Label Text="{Binding Total}"/>
                 </HorizontalStackLayout>
-                <sf:SfSlider x:Name="tipSlider" Value="{Binding TipPercentage, Mode=TwoWay}"> 
+                <sf:SfSlider x:Name="tipSlider" Value="{Binding TipPercentage}"> 
                     <sf:SfSlider.Tooltip>
                         <sf:SliderTooltip ShowAlways="False"/> <!--stretch goal would be displaying the decimal as whole number to represent percentage-->
                     </sf:SfSlider.Tooltip>
                 </sf:SfSlider>
                 <VerticalStackLayout>
-                    <Label Text="Diners"/>
+                    <Label Text="Diners: "/>
                     <HorizontalStackLayout>
-                        <Label Text="{Binding AmountDiners, Mode=OneWay}"/>
-                        <Stepper Increment="1" Value="{Binding AmountDiners, Mode=TwoWay}"/>
+                        <Label Text="{Binding AmountDiners}"/>
+                        <Stepper Increment="1" Value="{Binding AmountDiners}"/>
                     </HorizontalStackLayout>
-                    <Label Text="{Binding SplitAmount, Mode=OneWay}"/>
+                    <Label Text="{Binding SplitAmount}"/>
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </StackLayout>
