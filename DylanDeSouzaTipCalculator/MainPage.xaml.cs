@@ -36,11 +36,11 @@ namespace DylanDeSouzaTipCalculator
             }
         }
 
-        public double Total => model.Total;
+        public string Total => model.Total.ToString("F2");
 
-        public double TipAmount => model.TipAmount; 
+        public string TipAmount => model.TipAmount.ToString("F2"); 
 
-        public double SplitAmount => model.SplitAmount;
+        public string SplitAmount => model.SplitAmount.ToString("F2");
 
         public int AmountDiners
         {
@@ -56,7 +56,7 @@ namespace DylanDeSouzaTipCalculator
             }
         }
 
-        public double TipPercentage
+        public double SliderValue
         {
             get => model.TipPercentage;
             set

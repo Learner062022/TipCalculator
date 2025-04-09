@@ -22,9 +22,9 @@
                     <Label Text="Total: "/>
                     <Label Text="{Binding Total}"/>
                 </HorizontalStackLayout>
-                <sf:SfSlider x:Name="tipSlider" Value="{Binding TipPercentage}"> 
+                <sf:SfSlider x:Name="tipSlider" Value="{Binding SliderValue}"> 
                     <sf:SfSlider.Tooltip>
-                        <sf:SliderTooltip ShowAlways="False"/> <!--stretch goal would be displaying the decimal as whole number to represent percentage-->
+                        <sf:SliderTooltip ShowAlways="False" NumberFormat="P0"/>
                     </sf:SfSlider.Tooltip>
                 </sf:SfSlider>
                 <VerticalStackLayout>
