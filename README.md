@@ -1,4 +1,4 @@
-# TipCalculator
+# TipCalculatorPart1
 
 ## Project Overview
 
