@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
-             x:Class="DylanDeSouzaTipCalculator.MainPage">
+             xmlns:local="clr-namespace:DylanDeSouzaTipCalculator"
+             x:Class="DylanDeSouzaTipCalculator.MainPage"
+             x:DataType="local:Model">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -12,28 +15,29 @@
             <VerticalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Bill: "/>
-                    <Label Text="{Binding BillAmount}"/>
+                    <Label Text="{Binding BillAmount, StringFormat='{0:F2}'}"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Tip: "/>
-                    <Label Text="{Binding TipAmount}"/>
+                    <Label Text="{Binding TipAmount, StringFormat='{0:F2}'}"/>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Total: "/>
-                    <Label Text="{Binding Total}"/>
+                    <Label Text="{Binding Total, StringFormat='{0:F2}'}"/>
                 </HorizontalStackLayout>
-                <sf:SfSlider x:Name="tipSlider" Value="{Binding TipPercentage}"> 
+                <sf:SfSlider Value="{Binding TipPercentage}"> 
                     <sf:SfSlider.Tooltip>
-                        <sf:SliderTooltip ShowAlways="False"/> <!--stretch goal would be displaying the decimal as whole number to represent percentage-->
+                        <sf:SliderTooltip ShowAlways="False" NumberFormat="P0"/>
                     </sf:SfSlider.Tooltip>
                 </sf:SfSlider>
                 <VerticalStackLayout>
                     <Label Text="Diners: "/>
                     <HorizontalStackLayout>
                         <Label Text="{Binding AmountDiners}"/>
-                        <Stepper Increment="1" Value="{Binding AmountDiners}"/>
+                        <Stepper Increment="1" Value="{Binding AmountDiners}" Minimum="1"/>
                     </HorizontalStackLayout>
-                    <Label Text="{Binding SplitAmount}"/>
+                    <Label Text="Split Amount"/>
+                    <Label Text="{Binding SplitAmount, StringFormat='{0:F2}'}"/>
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </StackLayout>
